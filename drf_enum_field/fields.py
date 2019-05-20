@@ -21,4 +21,4 @@ class EnumField(ChoiceField):
     def to_representation(self, value):
         if not value:
             return None
-        return value.name
+        return getattr(value, 'name', value)
